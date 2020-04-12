@@ -7,7 +7,6 @@ struct digit {
 };
 
 
-// Add a prototype for countRedun() here
 struct digit * createDigit(int);
 struct digit * append(struct digit * end, struct digit * newDigptr);
 void printNumber(struct digit *);
@@ -133,7 +132,7 @@ int countRedun(struct digit * start) {
  * linked list of digits. Function counts how many redundancies can be observed
  * in the number stored in this list and return this count of redundancies.
  */
-  	struct digit * ptr = start;
+ 	struct digit * ptr = start;
     struct digit * uniqueStart, * uniqueEnd;
     struct digit * newDig;
     int foundInList;

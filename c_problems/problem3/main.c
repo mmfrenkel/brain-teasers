@@ -11,7 +11,6 @@ struct student *createStudent(char studentName[], int studentAge);
 struct student *append(struct student * end, struct student * newStudptr);
 void printStudents(struct student *start);
 void freeStudents(struct student *start);
-/* add any other prototypes as needed */
 
 int main(void) {
     struct student *start, *newStudptr, *end;
