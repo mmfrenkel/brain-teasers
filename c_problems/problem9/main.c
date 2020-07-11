@@ -13,7 +13,12 @@ int main(int argc, char* argv[]) {
     
     if (argc >= 2) {
         fileptr = fopen(argv[1], "r");
-        
+
+        if (fileptr == NULL) {
+            printf("Could not open file %s", argv[1]);
+            return 0;
+        }
+
         /* Get chars individually */
         chr = getc(fileptr);
 
