@@ -50,8 +50,8 @@ void delete_node_end() {
     else if (headptr->next == NULL) {
         /* In this case, there is only one node in the LL and after deletion
          * it will be empty */
-        struct node *to_delete = start;
-        start = NULL;
+        struct node *to_delete = headptr;
+        headptr = NULL;
         printf("Deleted element %d from Linked List", to_delete->data);
         free(to_delete);
     }
@@ -64,8 +64,43 @@ void delete_node_end() {
         }
         struc node *to_delete = trav->next;
         trav->next = NULL;
-        printf("Deleting element %d from Linked List", to_delete->data);
+        printf("Deleted element %d from Linked List", to_delete->data);
         free(to_delete);
+    }
+}
+
+void delete_node_start() {
+    
+    if (headptr == NULL) {
+        printf("Linked List is empty! Can't delete from start");
+    }
+    else if (headptr->next == NULL) {
+        /* In this case, there is only one node in the LL and after deletion
+         * it will be empty */
+        struct node *to_delete = headptr;
+        headptr = NULL;
+        printf("Deleted element %d from Linked List, to_delete->data);
+        free(to_delete);
+    }
+    else {
+        struct node *to_delete = headptr;
+        headptr=to_delete->next;
+        printf("Deleted element %d from Linked List", to_delete->data);
+        free(to_delete);
+    }
+}
+
+void print_list() {
+    
+    if (headptr == NULL) {
+        printf("Linked List is empty!");
+    }
+    else {
+        struct node *trav = headptr;
+        
+        do {
+            printf("[ %d ]", trav->data);
+        } (while trav->next != NULL);
     }
 }
 
