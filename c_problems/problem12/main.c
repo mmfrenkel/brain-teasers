@@ -20,12 +20,18 @@ int find_value_for_key(int key);
 void print_linked_list();
 
 
+int main(void) {
+    printf()
+}
+
+
+
 void add_node_end(int key, int value) {
     
     struct node *new_node = (struct node*) malloc(sizeof(struct node));
     
     if (key < 0) {
-        printf("Cannot create a new node with key < 0");
+        printf("Cannot create a new node with key < 0\n");
         return;
     }
 
@@ -48,7 +54,7 @@ void add_node_start(int key, int value) {
     struct node *new_node = (struct node*) malloc(sizeof(struct node));
     
     if (key < 0) {
-        printf("Cannot create a new node with key < 0");
+        printf("Cannot create a new node with key < 0\n");
         return;
     }
     
@@ -111,7 +117,7 @@ void delete_node_position(int position) {
     }
 
     if (trav == NULL) {
-        printf("No node to delete at position %d", position);
+        printf("No node to delete at position %d\n", position);
     }   
     else {
         trail.next = trav.next;
@@ -122,14 +128,14 @@ void delete_node_position(int position) {
 void delete_node_end() {
     
     if (tailptr == NULL) {
-        printf("Linked List is empty! Can't delete from end");
+        printf("Linked List is empty! Can't delete from end\n");
     }
     else if (headptr->next == NULL) {
         /* In this case, there is only one node in the LL and after deletion
          * it will be empty */
         struct node *to_delete = headptr;
         headptr = NULL;
-        printf("Deleted element %d from Linked List", to_delete->data);
+        printf("Deleted element %d from Linked List\n", to_delete->data);
         free(to_delete);
     }
     else {
@@ -141,7 +147,7 @@ void delete_node_end() {
         }
         struc node *to_delete = trav->next;
         trav->next = NULL;
-        printf("Deleted element %d from Linked List", to_delete->data);
+        printf("Deleted element %d from Linked List\n", to_delete->data);
         free(to_delete);
     }
 }
@@ -149,20 +155,20 @@ void delete_node_end() {
 void delete_node_start() {
     
     if (headptr == NULL) {
-        printf("Linked List is empty! Can't delete from start");
+        printf("Linked List is empty! Can't delete from start\n");
     }
     else if (headptr->next == NULL) {
         /* In this case, there is only one node in the LL and after deletion
          * it will be empty */
         struct node *to_delete = headptr;
         headptr = NULL;
-        printf("Deleted element %d from Linked List, to_delete->data);
+        printf("Deleted element %d from Linked List\n", to_delete->data);
         free(to_delete);
     }
     else {
         struct node *to_delete = headptr;
         headptr=to_delete->next;
-        printf("Deleted element %d from Linked List", to_delete->data);
+        printf("Deleted element %d from Linked List\n", to_delete->data);
         free(to_delete);
     }
 }
@@ -170,7 +176,7 @@ void delete_node_start() {
 void print_linked_list() {
     
     if (headptr == NULL) {
-        printf("Linked List is empty!");
+        printf("Linked List is empty!\n");
     }
     else {
         struct node *trav = headptr;
@@ -185,7 +191,7 @@ void print_linked_list() {
 int find_value_for_key(int key) {
     
     if (headptr == NULL) {
-        printf("Linked list is currently empty; No node with key %d", key);
+        printf("Linked list is currently empty; No node with key %d\n", key);
         return -1;
     }
 
@@ -194,18 +200,12 @@ int find_value_for_key(int key) {
         trav = trav->next;
         
         if (trav == NULL) {
-            printf("No node found with key '%d'", key);
+            printf("No node found with key %d\n", key);
             return -1;
         }
     }
-    printf("Value for (first) node with key = %d is %d", key, trav->data);
+    printf("Value for (first) node with key = %d is %d\n", key, trav->data);
     return trav->data;
 }
-
-
-
-
-
-
 
 
