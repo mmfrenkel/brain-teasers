@@ -21,10 +21,69 @@ void print_linked_list();
 
 
 int main(void) {
-    printf()
+
+    int user_choice;
+    int key;
+    int value;
+    int position;
+    printf("Ready to demo a linked list?!\n");
+
+    while (1) {
+        printf("Select (1-9) from the following list: \n");
+        printf("----------------------------------------\n");
+        printf("\t 1 - Add Node to Start\n");
+        printf("\t 2 - Add Node to End\n");
+        printf("\t 3 - Add Node at Specific Position\n");
+        printf("\t 4 - Delete Node at Start\n");
+        printf("\t 5 - Delete Node at End\n");
+        printf("\t 6 - Delete Node at Specific Position\n");
+        printf("\t 7 - Find Value for Key\n");
+        printf("\t 8 - Print Linked List\n");
+        printf("\t 9 - Stop Playing\n");
+        scanf("%d", &user_choice);
+        
+        if (user_choice == 1 || user_choice == 2 || user_choice == 3 || user_choice == 7) {
+            printf("Submit a key: ");
+            scanf("%d", &key);
+
+            if user_choice == 1 || user_choice == 2 || user_choice == 3) {
+                printf("Submit a value: ");
+                scanf("%d", &value);
+
+                if (user_choice == 3) {
+                    printf("Submit a position: ");
+                    scanf("%d", &position);
+                }
+            }
+        }
+
+        switch(user_choice) {
+            case 1:
+                add_node_at_start(key, value);
+                print_linked_list();
+            case 2:
+                add_node_at_end(key, value);
+                print_linked_list();
+            case 3:
+                add_node_at_position(key, value, position);
+                print_linked_list();
+            case 4:
+                delete_node_at_start();
+                print_linked_list();
+            case 5:
+                delete_node_at_end();
+                print_linked_list();
+            case 6:
+                delete_node_at_position();
+                print_linked_list();
+            case 7:
+                find_value_for_key(key);
+            case 8:
+                print_linked_list();
+            case 9:
+                exit(0);                
+    }
 }
-
-
 
 void add_node_end(int key, int value) {
     
