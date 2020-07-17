@@ -12,6 +12,8 @@ struct node *tailptr = NULL;
 
 void add_node_end(int key, int value);
 void add_node_start(int key, int value);
+void add_node_position(int key, int value, int position);
+void delete_node_position(int position);
 void delete_node_end();
 void delete_node_start();
 int find_value_for_key(int key);
@@ -93,7 +95,7 @@ void add_node_position(int key, int value, int position) {
     }
 }
 
-void delete_node_position(int key, int_value, int position) {
+void delete_node_position(int position) {
     
     if (position == 0) {
         delete_node_start();
