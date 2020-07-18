@@ -209,7 +209,7 @@ int main(void) {
     printf("Ready to demo a linked list?!\n");
 
     while (1) {
-        printf("Select (1-9) from the following list: \n");
+        printf("Select (1-9) from the following options: \n");
         printf("----------------------------------------\n");
         printf("\t 1 - Add Node to Start\n");
         printf("\t 2 - Add Node to End\n");
@@ -239,22 +239,22 @@ int main(void) {
 
         switch(user_choice) {
             case 1:
-                add_node_at_start(key, value);
+                add_node_start(key, value);
                 print_linked_list();
             case 2:
-                add_node_at_end(key, value);
+                add_node_end(key, value);
                 print_linked_list();
             case 3:
-                add_node_at_position(key, value, position);
+                add_node_position(key, value, position);
                 print_linked_list();
             case 4:
-                delete_node_at_start();
+                delete_node_start();
                 print_linked_list();
             case 5:
-                delete_node_at_end();
+                delete_node_end();
                 print_linked_list();
             case 6:
-                delete_node_at_position();
+                delete_node_position(position);
                 print_linked_list();
             case 7:
                 find_value_for_key(key);
