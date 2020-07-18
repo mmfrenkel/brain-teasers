@@ -172,11 +172,13 @@ void print_linked_list() {
         printf("Linked List is empty!\n");
     }
     else {
+        printf("\n---- current linked list (in order front to back) ----\n");
+
         struct node *trav = headptr;
         do {
             printf(" [ %d:  %d ] ", trav->key, trav->data);
-        } while (trav->next != NULL);
-        printf("\n");
+        } while ((trav = trav->next) != NULL);
+        printf("\n\n");
     }
 }
 
@@ -211,15 +213,17 @@ int main(void) {
     while (1) {
         printf("Select (1-9) from the following options: \n");
         printf("----------------------------------------\n");
-        printf("\t 1 - Add Node to Start\n");
-        printf("\t 2 - Add Node to End\n");
-        printf("\t 3 - Add Node at Specific Position\n");
-        printf("\t 4 - Delete Node at Start\n");
-        printf("\t 5 - Delete Node at End\n");
-        printf("\t 6 - Delete Node at Specific Position\n");
-        printf("\t 7 - Find Value for Key\n");
-        printf("\t 8 - Print Linked List\n");
-        printf("\t 9 - Stop Playing\n");
+        printf("  1 - Add Node to Start\n");
+        printf("  2 - Add Node to End\n");
+        printf("  3 - Add Node at Specific Position\n");
+        printf("  4 - Delete Node at Start\n");
+        printf("  5 - Delete Node at End\n");
+        printf("  6 - Delete Node at Specific Position\n");
+        printf("  7 - Find Value for Key\n");
+        printf("  8 - Print Linked List\n");
+        printf("  9 - Stop Playing\n");
+        printf("----------------------------------------\n");
+        printf("Provide your selection: ");
         scanf("%d", &user_choice);
 
         if (user_choice == 1 || user_choice == 2 || user_choice == 3 || user_choice == 7) {
@@ -237,30 +241,40 @@ int main(void) {
             }
         }
 
+        printf("User selected option %d!\n", user_choice);
         switch(user_choice) {
             case 1:
                 add_node_start(key, value);
                 print_linked_list();
+                break;
             case 2:
                 add_node_end(key, value);
                 print_linked_list();
+                break;
             case 3:
                 add_node_position(key, value, position);
                 print_linked_list();
+                break;
             case 4:
                 delete_node_start();
                 print_linked_list();
+                break;
             case 5:
                 delete_node_end();
                 print_linked_list();
+                break;
             case 6:
                 delete_node_position(position);
                 print_linked_list();
+                break;
             case 7:
                 find_value_for_key(key);
+                break;
             case 8:
                 print_linked_list();
+                break;
             case 9:
+                break;
                 exit(0);
         }
     }
