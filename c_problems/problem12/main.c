@@ -27,12 +27,14 @@ void add_node_end(int key, int value) {
         printf("Cannot create a new node with key < 0\n");
         return;
     }
-
+    
     new_node->next = NULL;
     new_node->key = key;
     new_node->data = value;
-
+    
+    printf("Created new node...\n");
     if (tailptr == NULL) {
+        printf("This linked list was empty\n");
         /* If there no is tailptr, then there can't be a head */
         headptr = new_node;
         tailptr = new_node;
@@ -234,7 +236,7 @@ int main(void) {
                 printf("Submit a value: ");
                 scanf("%d", &value);
 
-                if (user_choice == 3) {
+                if (user_choice == 3 || user_choice == 7) {
                     printf("Submit a position: ");
                     scanf("%d", &position);
                 }
@@ -274,7 +276,7 @@ int main(void) {
                 print_linked_list();
                 break;
             case 9:
-                break;
+                printf("Exiting Now!\n");
                 exit(0);
         }
     }
