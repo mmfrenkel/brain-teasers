@@ -32,9 +32,7 @@ void add_node_end(int key, int value) {
     new_node->key = key;
     new_node->data = value;
     
-    printf("Created new node...\n");
     if (tailptr == NULL) {
-        printf("This linked list was empty\n");
         /* If there no is tailptr, then there can't be a head */
         headptr = new_node;
         tailptr = new_node;
