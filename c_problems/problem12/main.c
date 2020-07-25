@@ -27,11 +27,11 @@ void add_node_end(int key, int value) {
         printf("Cannot create a new node with key < 0\n");
         return;
     }
-    
+
     new_node->next = NULL;
     new_node->key = key;
     new_node->data = value;
-    
+
     if (tailptr == NULL) {
         /* If there no is tailptr, then there can't be a head */
         headptr = new_node;
@@ -204,6 +204,11 @@ int find_value_for_key(int key) {
 
 int main(void) {
 
+    char *user_choice_submitted;
+    char *key_submitted;
+    char *value_submitted;
+    char *position_submitted;
+
     int user_choice;
     int key;
     int value;
@@ -224,19 +229,19 @@ int main(void) {
         printf("  9 - Stop Playing\n");
         printf("----------------------------------------\n");
         printf("Provide your selection: ");
-        scanf("%d", &user_choice);
+        scanf("%s", &user_choice_submitted);
 
         if (user_choice == 1 || user_choice == 2 || user_choice == 3 || user_choice == 7) {
             printf("Submit a key: ");
-            scanf("%d", &key);
+            scanf("%s", &key_submitted);
 
             if (user_choice == 1 || user_choice == 2 || user_choice == 3) {
                 printf("Submit a value: ");
-                scanf("%d", &value);
+                scanf("%s", &value_submitted);
 
                 if (user_choice == 3 || user_choice == 7) {
                     printf("Submit a position: ");
-                    scanf("%d", &position);
+                    scanf("%s", &position_submitted);
                 }
             }
         }
