@@ -7,11 +7,11 @@ typedef struct linked_list {
 	node *tail;
 } Linked_List;
 
-void add_node_end(Linked_List list, char *key, char *value);
+void add_node_end(Linked_List list, int key, int value);
 
-void add_node_start(Linked_List list, char *key, char*value);
+void add_node_start(Linked_List list, int key, int value);
 
-void add_node_position(Linked_List list, char *key, char *value, int position);
+void add_node_position(Linked_List list, int key, int value, int position);
 
 void delete_node_position(Linked_List list, int position);
 
