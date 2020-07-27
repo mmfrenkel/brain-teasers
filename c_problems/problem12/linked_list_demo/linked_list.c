@@ -1,22 +1,11 @@
-typedef struct linked_list {
-	node *head = NULL;
-	node *tail = NULL;
-} Linked_List;
+#include <stdio.h>
+#include "linked_list.h"
 
 typedef struct node {
     char *key;
     char *data;
     struct node *next;
 } Node;
-
-void add_node_end(Linked_List list, char *key, char *value);
-void add_node_start(Linked_List list, char *key, char*value);
-void add_node_position(Linked_List list, char *key, char *value, int position);
-void delete_node_position(Linked_List list, int position);
-void delete_node_end(Linked_List list);
-void delete_node_start(Linked_List list);
-int find_value_for_key(Linked_List list, int key);
-void print_linked_list(Linked_List list);
 
 void add_node_end(Linked_List list, int key, int value) {
 
