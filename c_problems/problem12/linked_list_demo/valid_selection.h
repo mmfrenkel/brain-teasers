@@ -1,2 +1,3 @@
+#include <stdio.h>
 
-bool valid_selection(char *user_choice);
+int valid_selection(char *user_choice);

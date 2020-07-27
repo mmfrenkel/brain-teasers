@@ -1,13 +1,15 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
 
-bool valid_selection(char *user_choice) {
+int valid_selection(char *user_choice) {
 	printf("User selected option %s!\n", user_choice);
 
 	int i;
-	if (i = 0; i < strlen(user_choice); i++) {
+	for (i = 0; i < (int) strlen(user_choice); i++) {
 		if (!isdigit(user_choice[i])) {
-			return false;
+			return 0;
 		}
 	}
-	return true;
+	return 1;
 }

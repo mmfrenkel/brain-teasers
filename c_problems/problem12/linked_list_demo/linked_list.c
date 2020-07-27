@@ -1,11 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "linked_list.h"
-
-typedef struct node {
-    int key;
-    int data;
-    struct node *next;
-} Node;
 
 void add_node_end(Linked_List *list, int key, int value) {
 
@@ -49,7 +44,7 @@ void add_node_start(Linked_List *list, int key, int value) {
         list->tailptr = new_node;
     }
     else {
-        list->new_node->next = headptr;
+        new_node->next = list->headptr;
         list->headptr = new_node;
     }
 }
@@ -71,14 +66,14 @@ void add_node_position(Linked_List *list, int key, int value, int position) {
     }
 
     if (trav == NULL) {
-        add_node_end(key, value);
+        add_node_end(list, key, value);
     }
     else {
         Node *new_node = (Node *) malloc(sizeof(Node));
         new_node->key= key;
         new_node->data = value;
         new_node->next = trav;
-        list->trail->next = new_node;
+        trail->next = new_node;
     }
 }
 
@@ -115,7 +110,7 @@ void delete_node_end(Linked_List *list) {
         /* In this case, there is only one node in the LL and after deletion
          * it will be empty */
         Node *to_delete = list->headptr;
-        headptr = NULL;
+        list->headptr = NULL;
         printf("Deleted element %d from Linked List\n", to_delete->data);
         free(to_delete);
     }
@@ -126,7 +121,7 @@ void delete_node_end(Linked_List *list) {
         while (trav->next->next != NULL) {
             trav = trav->next;
         }
-        Node to_delete = trav->next;
+        Node *to_delete = trav->next;
         trav->next = NULL;
         printf("Deleted element %d from Linked List\n", to_delete->data);
         free(to_delete);
@@ -142,7 +137,7 @@ void delete_node_start(Linked_List *list) {
         /* In this case, there is only one node in the LL and after deletion
          * it will be empty */
         Node *to_delete = list->headptr;
-        headptr = NULL;
+        list->headptr = NULL;
         printf("Deleted element %d from Linked List\n", to_delete->data);
         free(to_delete);
     }

@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <ctype.h>
 #include "valid_selection.h"
 #include "linked_list.h"
 
@@ -9,7 +8,7 @@ int MAX_SUBMISSION_SIZE = 1;
 
 int main(void) {
 
-    char *user_choice_submitted[MAX_SUBMISSION_SIZE];
+    char user_choice_submitted[MAX_SUBMISSION_SIZE];
     int user_choice;
     int key;
     int value;
@@ -32,7 +31,7 @@ int main(void) {
         printf("  9 - Stop Playing\n");
         printf("----------------------------------------\n");
         printf("Provide your selection: ");
-        scanf("%s", &user_choice_submitted);
+        scanf("%s", user_choice_submitted);
 
         if (!valid_selection(user_choice_submitted)) {
         	printf("Please provide a number 1-9");
